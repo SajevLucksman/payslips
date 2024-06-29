@@ -5,9 +5,6 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonItem,
-  IonLabel,
-  IonNote,
   IonPage,
   IonToolbar,
   IonButton,
@@ -19,7 +16,7 @@ import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
 import FileSystem from '../common/services/file-system';
 
-function ViewPayslip() {
+function PayslipDetail() {
   const [payslip, setPayslip] = useState<Payslip>();
   const params = useParams<{ id: string }>();
   const [present, dismiss] = useIonLoading();
@@ -108,4 +105,4 @@ function ViewPayslip() {
   );
 }
 
-export default ViewPayslip;
+export default PayslipDetail;

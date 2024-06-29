@@ -22,7 +22,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import PayslipsList from './payslips/PayslipsList';
-import ViewPayslip from './payslips/ViewPayslip';
+import PayslipDetail from './payslips/PayslipDetail';
 
 setupIonicReact();
 
@@ -33,7 +33,7 @@ const App: React.FC = () => (
         <Route exact path="/payslips" component={PayslipsList}/>
         <Redirect exact from="/" to="/payslips"/>
         <Route path="/detail/:id">
-          <ViewPayslip/>
+          <PayslipDetail/>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
