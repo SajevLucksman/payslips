@@ -15,18 +15,18 @@ class FileSystem {
         const base64data = reader.result as string;
 
         // Write the file to the filesystem
-        await Filesystem.writeFile({
+        const writeResult = await Filesystem.writeFile({
           path: fileName,
           data: base64data.split(',')[1],
           directory: Directory.Documents
         });
-
-        alert('File downloaded successfully!');
+        console.log('File saved at:', writeResult.uri);
+        return writeResult.uri;
       };
       reader.readAsDataURL(blob);
     } catch (error) {
       console.error('Error downloading the file', error);
-      alert('Failed to download the file');
+      throw error;
     }
   }
 }

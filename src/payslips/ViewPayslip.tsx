@@ -11,25 +11,47 @@ import {
   IonPage,
   IonToolbar,
   IonButton,
+  useIonLoading,
+  useIonToast,
   useIonViewWillEnter,
 } from '@ionic/react';
 import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
 import FileSystem from '../common/services/file-system';
 
-const handleDownload = (url : string, fileName: string) => {
-  FileSystem.downloadFile(url, fileName).then(result => {
-    console.log("Downloaded Successfully")
-  });
-};
 function ViewPayslip() {
   const [payslip, setPayslip] = useState<Payslip>();
   const params = useParams<{ id: string }>();
+  const [present, dismiss] = useIonLoading();
+  const [presentToast] = useIonToast();
 
   useIonViewWillEnter(() => {
     const payslip = getPayslip(parseInt(params.id, 15));
     setPayslip(payslip);
   });
+
+  const handleDownload = async (url: string, fileName: string) => {
+    await present({
+      message: 'Downloading...'
+    });
+    FileSystem.downloadFile(url, fileName).then(result => {
+      console.log('Downloaded Successfully')
+    }).catch(error => {
+      console.log('Download failed.');
+    }).finally(() => {
+      dismiss();
+      showToast();
+    });
+  };
+
+  const showToast = async () => {
+    await presentToast({
+      message: 'File downloaded successfully!',
+      duration: 1500,
+      position: 'bottom',
+      color: 'primary'
+    });
+  };
 
   return (
     <IonPage id="view-payslip">
@@ -67,7 +89,8 @@ function ViewPayslip() {
               </IonLabel>
             </IonItem>
 
-            <IonButton expand="full" onClick={() => handleDownload(payslip.file, payslip.id.toString())}>Download Payslip</IonButton>
+            <IonButton expand="full" onClick={() => handleDownload(payslip.file, payslip.id.toString())}>Download
+              Payslip</IonButton>
           </>
         ) : (
           <div>Payslip not found</div>
