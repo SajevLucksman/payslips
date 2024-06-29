@@ -13,7 +13,7 @@ import {
   IonButton,
   useIonLoading,
   useIonToast,
-  useIonViewWillEnter,
+  useIonViewWillEnter, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCard,
 } from '@ionic/react';
 import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
@@ -66,29 +66,37 @@ function ViewPayslip() {
       <IonContent fullscreen>
         {payslip ? (
           <>
-            <IonItem>
-              <IonLabel>
-                <h2>
-                  Payslip ID :
-                  <span>
-                    <IonNote>000{payslip.id}</IonNote>
-                  </span>
-                </h2>
-                <h2>
-                  Date From :
-                  <span>
-                    <IonNote>{payslip.toDate}</IonNote>
-                  </span>
-                </h2>
-                <h2>
-                  Date To :
-                  <span>
-                    <IonNote>{payslip.fromDate}</IonNote>
-                  </span>
-                </h2>
-              </IonLabel>
-            </IonItem>
+            <IonCard color ="primary">
+              <IonCardHeader>
+                <IonCardTitle>Name : L SAJEV</IonCardTitle>
+                <IonCardSubtitle>Payslip for {payslip.fromDate} - {payslip.toDate}</IonCardSubtitle>
+              </IonCardHeader>
+              <IonCardContent>
+                <IonCardSubtitle>#Employer: LUCK89067</IonCardSubtitle>
+                <h6> Your basic salary: 70000$</h6></IonCardContent>
+            </IonCard>
+            <IonCard color="medium">
+              <IonCardHeader>
+                <IonCardTitle>Salary Breakdown</IonCardTitle>
+                <IonCardSubtitle>#Payslip 000{payslip.id}</IonCardSubtitle>
 
+              </IonCardHeader>
+              <IonCardContent>
+                <h5>Payslip period : {payslip.fromDate} to {payslip.toDate}</h5>
+                <h6>Basic Salary: 70000$</h6>
+                <p>Allowances:</p>
+                <ul>
+                  <li>Housing Allowance: 10000$</li>
+                  <li>Transportation Allowance: 5000$</li>
+                </ul>
+                <p>Deductions:</p>
+                <ul>
+                  <li>Tax: 10000$</li>
+                  <li>Insurance: 5000$</li>
+                </ul>
+                <p>Net Salary: 60000$</p>
+              </IonCardContent>
+            </IonCard>
             <IonButton expand="full" onClick={() => handleDownload(payslip.file, payslip.id.toString())}>Download
               Payslip</IonButton>
           </>

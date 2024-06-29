@@ -37,11 +37,11 @@ const PayslipsList: React.FC = () => {
       <IonContent>
         <IonCard color ="primary">
           <IonCardHeader>
-            <IonCardTitle>#Employer: LUCK89067</IonCardTitle>
+            <IonCardTitle>Hi Sajev!</IonCardTitle>
             <IonCardSubtitle>Review Your Earnings and Payment History</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>
-            <IonCardSubtitle>Name : L SAJEV</IonCardSubtitle>
+            <IonCardSubtitle>#Employer: LUCK89067</IonCardSubtitle>
             <h6>Access and download your pay slips conveniently. Review your earnings and payment history with ease.</h6></IonCardContent>
         </IonCard>
         <IonRefresher slot="fixed">
