@@ -16,9 +16,9 @@ This project is for managing and displaying payslip information.
 
 Before running the project, ensure you have the following prerequisites installed:
 
-- Ionic CLI
-- Node.js
-- npm
+- Ionic CLI (@ionic/cli@7.2.0_
+- Node.js (v18.18.1)
+- npm (9.8.1)
 
 To run the project on iOS using Capacitor, follow these steps:
 
