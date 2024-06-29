@@ -36,6 +36,24 @@ const payslips: Payslip[] = [
     fromDate: '2023-05-01',
     toDate: '2023-05-31',
     file: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg'
+  },
+  {
+    id: 6,
+    fromDate: '2023-06-01',
+    toDate: '2023-06-31',
+    file: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg'
+  },
+  {
+    id: 7,
+    fromDate: '2023-07-01',
+    toDate: '2023-07-31',
+    file: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg'
+  },
+  {
+    id: 8,
+    fromDate: '2023-08-01',
+    toDate: '2023-08-31',
+    file: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg'
   }
 ];
 

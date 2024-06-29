@@ -11,6 +11,7 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
+  IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,
   useIonViewWillEnter
 } from '@ionic/react';
 import { getPayslips, Payslip } from '../common/data/payslips';
@@ -34,6 +35,14 @@ const PayslipsList: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        <IonCard color ="primary">
+          <IonCardHeader>
+            <IonCardTitle>My Pay Slips</IonCardTitle>
+            <IonCardSubtitle>Review Your Earnings and Payment History</IonCardSubtitle>
+          </IonCardHeader>
+
+          <IonCardContent>Access and download your pay slips conveniently. Review your earnings and payment history with ease.</IonCardContent>
+        </IonCard>
         <IonRefresher slot="fixed">
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>

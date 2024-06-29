@@ -1,0 +1,31 @@
+.custom-ion-item {
+margin-bottom: 1rem;
+}
+
+.divider {
+  min-width: 0.2rem;
+  --min-width: 0.2rem;
+  height: 100%;
+  background-color: var(--ion-color-primary);
+  box-shadow: 0 0 10px var(--ion-color-primary);
+  margin-right: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.2) 10px,
+    rgba(255, 255, 255, 0.2) 20px
+  );
+  pointer-events: none;
+}
