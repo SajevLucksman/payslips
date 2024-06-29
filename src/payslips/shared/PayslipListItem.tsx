@@ -2,7 +2,6 @@ import React from 'react';
 import {
   IonItem,
   IonLabel,
-  IonNote,
   IonText,
   IonChip,
 } from '@ionic/react';
@@ -36,7 +35,7 @@ const PayslipListItem: React.FC<PayslipListItemProps> = ({payslip}) => {
           <h2>#Payslip: 000{payslip.id}</h2>
         </IonText>
         <IonText color="medium">
-          <h3>Pay Period: <b>{payslip.fromDate} - {payslip.toDate}</b></h3>
+          <h3>Pay Period: {payslip.fromDate} - {payslip.toDate}</h3>
         </IonText>
       </IonLabel>
       <IonChip color="danger">{getMonthName(payslip.fromDate)}</IonChip>
