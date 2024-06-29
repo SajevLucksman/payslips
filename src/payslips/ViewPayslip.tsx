@@ -5,17 +5,23 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonIcon,
   IonItem,
   IonLabel,
   IonNote,
   IonPage,
   IonToolbar,
+  IonButton,
   useIonViewWillEnter,
 } from '@ionic/react';
 import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
+import FileSystem from '../common/services/file-system';
 
+const handleDownload = (url : string, fileName: string) => {
+  FileSystem.downloadFile(url, fileName).then(result => {
+    console.log("Downloaded Successfully")
+  });
+};
 function ViewPayslip() {
   const [payslip, setPayslip] = useState<Payslip>();
   const params = useParams<{ id: string }>();
@@ -61,18 +67,7 @@ function ViewPayslip() {
               </IonLabel>
             </IonItem>
 
-            <div>
-              <h1>{payslip.file}</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
+            <IonButton expand="full" onClick={() => handleDownload(payslip.file, payslip.id.toString())}>Download Payslip</IonButton>
           </>
         ) : (
           <div>Payslip not found</div>
