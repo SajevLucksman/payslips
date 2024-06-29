@@ -10,7 +10,7 @@ import {
   IonButton,
   useIonLoading,
   useIonToast,
-  useIonViewWillEnter, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCard,
+  useIonViewWillEnter, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCard, IonTitle,
 } from '@ionic/react';
 import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
@@ -54,6 +54,7 @@ function PayslipDetail() {
     <IonPage id="view-payslip">
       <IonHeader translucent>
         <IonToolbar>
+          <IonTitle>Payslip Detail</IonTitle>
           <IonButtons slot="start">
             <IonBackButton text="Payslip List" defaultHref="/payslips"></IonBackButton>
           </IonButtons>
