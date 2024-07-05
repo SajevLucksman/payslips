@@ -1,11 +1,33 @@
 {
   "COMMON": {
-    "WELCOME_MESSAGE": "Hi Sajev!"
+    "WELCOME_MESSAGE": "Hola {{name}}",
+    "DOWNLOADING_MESSAGE": "Descargando...",
+    "FILE_DOWNLOAD_SUCCESS": "¡Archivo descargado con éxito!",
+    "DOWNLOAD_FAILED_MESSAGE": "Descarga fallida. Por favor, inténtalo de nuevo."
   },
   "PAYSLIP": {
-    "PAYSLIPS": "Payslips",
-    "PAYSLIP_SUMMARY_CARD_SUB_HEADING": "Review Your Earnings and Payment History",
-    "EMPLOYER_ID": "#Employer: {{employerID}}",
-    "PAYSLIP_SUMMARY_CARD_DESCRIPTION": "Access and download your pay slips conveniently. Review your earnings and payment history with ease."
+    "PAYSLIPS": "Nóminas",
+    "PAYSLIP_SUMMARY_CARD_SUB_HEADING": "Revise sus ganancias e historial de pagos",
+    "EMPLOYER_ID": "#Empleador: {{employerID}}",
+    "PAYSLIP_SUMMARY_CARD_DESCRIPTION": "Acceda y descargue sus nóminas convenientemente. Revise sus ganancias e historial de pagos con facilidad.",
+    "PAYSLIP_DETAIL_TITLE": "Detalle de la Nómina",
+    "PAYSLIP_NOT_FOUND": "Nómina no encontrada",
+    "PAYSLIP_DETAIL_BUTTON_TEXT": "Descargar Nómina",
+    "PAYSLIP_ITEM_NUMBER": "#Nómina: 000{{id}}",
+    "PAYSLIP_ITEM_PAY_PERIOD": "Período de Pago: {{fromDate}} - {{toDate}}",
+    "PAYSLIP_DETAIL_CARD_TITLE": "Nombre: {{name}}",
+    "PAYSLIP_DETAIL_CARD_SUBTITLE": "Nómina para {{fromDate}} - {{toDate}}",
+    "PAYSLIP_DETAIL_CARD_SALARY": "Su salario básico: {{salary}}",
+    "PAYSLIP_BREAKDOWN_CARD_TITLE": "Desglose Salarial",
+    "PAYSLIP_BREAKDOWN_CARD_SUBTITLE": "#Nómina 000{{id}}",
+    "PAYSLIP_BREAKDOWN_PERIOD": "Período de Nómina: {{fromDate}} a {{toDate}}",
+    "PAYSLIP_BREAKDOWN_BASIC_SALARY": "Salario Básico: {{basicSalary}}",
+    "PAYSLIP_BREAKDOWN_HOUSING_ALLOWANCE": "Asignación de Vivienda: {{housingAllowance}}",
+    "PAYSLIP_BREAKDOWN_TRANSPORT_ALLOWANCE": "Asignación de Transporte: {{transportAllowance}}",
+    "PAYSLIP_BREAKDOWN_TAX": "Impuesto: {{tax}}",
+    "PAYSLIP_BREAKDOWN_INSURANCE": "Seguro: {{insurance}}",
+    "PAYSLIP_BREAKDOWN_NET_SALARY": "Salario Neto: {{netSalary}}",
+    "PAYSLIP_BREAKDOWN_ALLOWANCES": "Asignaciones:",
+    "PAYSLIP_BREAKDOWN_DEDUCTIONS": "Deducciones:"
   }
 }
