@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import {
-  IonBackButton,
-  IonButtons,
   IonContent,
   IonHeader,
   IonList,
