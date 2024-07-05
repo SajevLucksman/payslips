@@ -15,7 +15,7 @@ import {
 import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
 import FileSystem from '../common/services/file-transfer';
-import Constants from '../common/services/constant';
+import Constants from '../common/constants/Constant';
 import PayslipCard from './shared/PaySlipsCard';
 import PayslipBreakdown from './shared/PayslipBreakdown';
 
@@ -46,8 +46,8 @@ const PayslipDetail: React.FC = () => {
   const showToast = async (message: string, color: 'primary' | 'danger') => {
     await presentToast({
       message,
-      duration: Constants.TOAST_DURATION, // Use TOAST_DURATION from Constants class
-      position: 'bottom',
+      duration: Constants.TOAST.TOAST_DURATION,
+      position: Constants.TOAST.TOAST_POSITION_BOTTOM,
       color,
     });
   };
