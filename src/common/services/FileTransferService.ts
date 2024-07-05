@@ -1,5 +1,5 @@
 import FileSystemService from './FileSystemService';
-import Log from './log';
+import Log from './LogService';
 
 class FileTransferService {
   async downloadFile(url: string, fileName: string): Promise<string> {
@@ -12,7 +12,7 @@ class FileTransferService {
       Log.log('File saved at:' + fileUri);
       return fileUri;
     } catch (error) {
-      Log.log('Error downloading the file' + error);
+      Log.error('Error downloading the file', error);
       throw error;
     }
   }

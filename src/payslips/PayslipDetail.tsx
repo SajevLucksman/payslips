@@ -18,6 +18,7 @@ import FileTransferService from '../common/services/FileTransferService';
 import Constants from '../common/constants/Constant';
 import PayslipCard from './shared/PaySlipsCard';
 import PayslipBreakdown from './shared/PayslipBreakdown';
+import LogService from '../common/services/LogService';
 
 const PayslipDetail: React.FC = () => {
   const [payslip, setPayslip] = useState<Payslip>();
@@ -36,7 +37,7 @@ const PayslipDetail: React.FC = () => {
       await FileTransferService.downloadFile(url, fileName);
       await showToast('File downloaded successfully!', Constants.COLORS.PRIMARY);
     } catch (error) {
-      console.error('Download failed', error);
+      LogService.error('Download failed', error);
       await showToast('Download failed. Please try again.', Constants.COLORS.DANGER);
     } finally {
       await dismiss();
