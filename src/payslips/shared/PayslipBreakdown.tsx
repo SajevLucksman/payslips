@@ -6,12 +6,16 @@ import {
   IonCardSubtitle,
   IonCardContent,
 } from '@ionic/react';
+import { Payslip } from '../../common/data/payslips';
+interface Props {
+  payslip: Payslip;
+}
 
-const PayslipBreakdown: React.FC = () => (
+const PayslipBreakdown: React.FC<Props> = ({payslip}) => (
   <IonCard color="medium">
     <IonCardHeader>
       <IonCardTitle>Salary Breakdown</IonCardTitle>
-      <IonCardSubtitle>#Payslip 0001</IonCardSubtitle>
+      <IonCardSubtitle>#Payslip 000{payslip.id}</IonCardSubtitle>
     </IonCardHeader>
     <IonCardContent>
       <h5>Payslip period: January 2024 to February 2024</h5>

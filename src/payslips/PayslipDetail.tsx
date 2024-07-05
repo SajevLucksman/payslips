@@ -34,12 +34,12 @@ const PayslipDetail: React.FC = () => {
     await present({message: 'Downloading...'});
     try {
       await FileSystem.downloadFile(url, fileName);
-      showToast('File downloaded successfully!', 'primary');
+      await showToast('File downloaded successfully!', Constants.COLORS.PRIMARY);
     } catch (error) {
       console.error('Download failed', error);
-      showToast('Download failed. Please try again.', 'danger');
+      await showToast('Download failed. Please try again.', Constants.COLORS.DANGER);
     } finally {
-      dismiss();
+      await dismiss();
     }
   };
 
@@ -67,7 +67,7 @@ const PayslipDetail: React.FC = () => {
         {payslip ? (
           <>
             <PayslipCard payslip={payslip}/>
-            <PayslipBreakdown/>
+            <PayslipBreakdown payslip={payslip}/>
             <IonButton expand="full" onClick={() => handleDownload(payslip.file, payslip.id.toString())}>
               Download Payslip
             </IonButton>
