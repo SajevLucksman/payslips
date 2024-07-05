@@ -20,9 +20,11 @@ import Constants from '../common/constants/Constant';
 import PayslipCard from './shared/PaySlipCard';
 import PayslipBreakdown from './shared/PayslipBreakdown';
 import LogService from '../common/services/LogService';
+import { useTranslation } from 'react-i18next';
 
 const PayslipDetail: React.FC = () => {
   const [payslip, setPayslip] = useState<Payslip>();
+  const {t} = useTranslation();
   const params = useParams<{ id: string }>();
   const [present, dismiss] = useIonLoading();
   const [presentToast] = useIonToast();
@@ -33,13 +35,14 @@ const PayslipDetail: React.FC = () => {
   });
 
   const handleDownload = async (url: string, fileName: string) => {
-    await present({message: 'Downloading...'});
+    await present({message: t('COMMON.DOWNLOADING_MESSAGE')});
+
     try {
       await FileTransferService.downloadFile(url, fileName);
-      await showToast('File downloaded successfully!', Constants.COLORS.PRIMARY);
+      await showToast(t('COMMON.FILE_DOWNLOAD_SUCCESS'), Constants.COLORS.PRIMARY);
     } catch (error) {
-      LogService.error('Download failed', error);
-      await showToast('Download failed. Please try again.', Constants.COLORS.DANGER);
+      LogService.error('Download failed.', error);
+      await showToast(t('COMMON.DOWNLOAD_FAILED_MESSAGE'), Constants.COLORS.DANGER);
     } finally {
       await dismiss();
     }
@@ -58,9 +61,9 @@ const PayslipDetail: React.FC = () => {
     <IonPage id="view-payslip">
       <IonHeader translucent>
         <IonToolbar>
-          <IonTitle>Payslip Detail</IonTitle>
+          <IonTitle>{t('PAYSLIP.PAYSLIP_DETAIL_TITLE')}</IonTitle>
           <IonButtons slot="start">
-            <IonBackButton text="Payslip List" defaultHref="/payslips"/>
+            <IonBackButton text={t('PAYSLIP.PAYSLIPS')} defaultHref="/payslips"/>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
@@ -71,11 +74,11 @@ const PayslipDetail: React.FC = () => {
             <PayslipCard payslip={payslip}/>
             <PayslipBreakdown payslip={payslip}/>
             <IonButton expand="full" onClick={() => handleDownload(payslip.file, payslip.id.toString())}>
-              Download Payslip
+              {t('PAYSLIP.PAYSLIP_DETAIL_BUTTON_TEXT')}
             </IonButton>
           </>
         ) : (
-          <div>Payslip not found</div>
+          <div>{t('PAYSLIP.PAYSLIP_NOT_FOUND')}</div>
         )}
       </IonContent>
     </IonPage>

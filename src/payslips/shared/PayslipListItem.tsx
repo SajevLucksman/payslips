@@ -7,10 +7,10 @@ import {
 } from '@ionic/react';
 import './PayslipListItem.css';
 import { PayslipListItemProps } from '../../common/interfaces/PayslipListItemProps';
-
+import { useTranslation } from 'react-i18next';
 
 const PayslipListItem: React.FC<PayslipListItemProps> = ({payslip}) => {
-
+  const {t} = useTranslation();
   const getMonthName = (dateString: string): string => {
     const monthNames = [
       'January', 'February', 'March', 'April', 'May', 'June',
@@ -29,10 +29,10 @@ const PayslipListItem: React.FC<PayslipListItemProps> = ({payslip}) => {
       <div className="divider"></div>
       <IonLabel>
         <IonText color="primary">
-          <h2>#Payslip: 000{payslip.id}</h2>
+          <h2>{t('PAYSLIP.PAYSLIP_ITEM_NUMBER', {id: payslip.id})}</h2>
         </IonText>
         <IonText color="medium">
-          <h3>Pay Period: {payslip.fromDate} - {payslip.toDate}</h3>
+          <h3>{t('PAYSLIP.PAYSLIP_ITEM_PAY_PERIOD', {fromDate: payslip.fromDate, toDate: payslip.toDate})}</h3>
         </IonText>
       </IonLabel>
       <IonChip color="danger">{getMonthName(payslip.fromDate)}</IonChip>

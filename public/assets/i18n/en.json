@@ -1,12 +1,33 @@
 {
   "COMMON": {
-    "WELCOME_MESSAGE": "Hi Sajev!"
+    "WELCOME_MESSAGE": "Hi {{name}}",
+    "DOWNLOADING_MESSAGE": "Downloading...",
+    "FILE_DOWNLOAD_SUCCESS": "File downloaded successfully!",
+    "DOWNLOAD_FAILED_MESSAGE": "Download failed. Please try again."
   },
   "PAYSLIP": {
     "PAYSLIPS": "Payslips",
     "PAYSLIP_SUMMARY_CARD_SUB_HEADING": "Review Your Earnings and Payment History",
-    "EMPLOYER_ID": "#Employer: LUCK89067",
-    "PAYSLIP_SUMMARY_CARD_DESCRIPTION": "Access and download your pay slips conveniently. Review your earnings and payment history with ease."
-
+    "EMPLOYER_ID": "#Employer: {{employerID}}",
+    "PAYSLIP_SUMMARY_CARD_DESCRIPTION": "Access and download your pay slips conveniently. Review your earnings and payment history with ease.",
+    "PAYSLIP_DETAIL_TITLE": "Payslip Detail",
+    "PAYSLIP_NOT_FOUND": "Payslip not found",
+    "PAYSLIP_DETAIL_BUTTON_TEXT": "Download Payslip",
+    "PAYSLIP_ITEM_NUMBER": "#Payslip: 000{{id}}",
+    "PAYSLIP_ITEM_PAY_PERIOD": "Pay Period: {{fromDate}} - {{toDate}}",
+    "PAYSLIP_DETAIL_CARD_TITLE": "Name: {{name}}",
+    "PAYSLIP_DETAIL_CARD_SUBTITLE": "Payslip for {{fromDate}} - {{toDate}}",
+    "PAYSLIP_DETAIL_CARD_SALARY": "Your basic salary: {{salary}}",
+    "PAYSLIP_BREAKDOWN_CARD_TITLE": "Salary Breakdown",
+    "PAYSLIP_BREAKDOWN_CARD_SUBTITLE": "#Payslip 000{{id}}",
+    "PAYSLIP_BREAKDOWN_PERIOD": "Payslip period: {{fromDate}} to {{toDate}}",
+    "PAYSLIP_BREAKDOWN_BASIC_SALARY": "Basic Salary: {{basicSalary}}",
+    "PAYSLIP_BREAKDOWN_HOUSING_ALLOWANCE": "Housing Allowance: {{housingAllowance}}",
+    "PAYSLIP_BREAKDOWN_TRANSPORT_ALLOWANCE": "Transportation Allowance: {{transportAllowance}}",
+    "PAYSLIP_BREAKDOWN_TAX": "Tax: {{tax}}",
+    "PAYSLIP_BREAKDOWN_INSURANCE": "Insurance: {{insurance}}",
+    "PAYSLIP_BREAKDOWN_NET_SALARY": "Net Salary: {{netSalary}}",
+    "PAYSLIP_BREAKDOWN_ALLOWANCES": "Allowances:",
+    "PAYSLIP_BREAKDOWN_DEDUCTIONS": "Deductions:"
   }
 }
