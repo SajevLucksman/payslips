@@ -16,7 +16,7 @@ This project is for managing and displaying payslip information.
 
 Before running the project, ensure you have the following prerequisites installed:
 
-- Ionic CLI (@ionic/cli@7.2.0_
+- Ionic CLI (@ionic/cli@7.2.0)
 - Node.js (v18.18.1)
 - npm (9.8.1)
 
