@@ -1,0 +1,12 @@
+{
+  "COMMON": {
+    "WELCOME_MESSAGE": "Hi Sajev!"
+  },
+  "PAYSLIP": {
+    "PAYSLIPS": "Payslips",
+    "PAYSLIP_SUMMARY_CARD_SUB_HEADING": "Review Your Earnings and Payment History",
+    "EMPLOYER_ID": "#Employer: LUCK89067",
+    "PAYSLIP_SUMMARY_CARD_DESCRIPTION": "Access and download your pay slips conveniently. Review your earnings and payment history with ease."
+
+  }
+}
