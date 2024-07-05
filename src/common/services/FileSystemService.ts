@@ -1,6 +1,6 @@
 import { Filesystem as CapFileSystem, Directory } from '@capacitor/filesystem';
 
-class FileSystem {
+class FileSystemService {
   async writeFile(fileName: string, data: string): Promise<string> {
     const writeResult = await CapFileSystem.writeFile({
       path: fileName,
@@ -11,4 +11,4 @@ class FileSystem {
   }
 }
 
-export default new FileSystem();
+export default new FileSystemService();

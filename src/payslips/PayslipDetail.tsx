@@ -14,7 +14,7 @@ import {
 } from '@ionic/react';
 import { useParams } from 'react-router';
 import { getPayslip, Payslip } from '../common/data/payslips';
-import FileSystem from '../common/services/file-transfer';
+import FileTransferService from '../common/services/FileTransferService';
 import Constants from '../common/constants/Constant';
 import PayslipCard from './shared/PaySlipsCard';
 import PayslipBreakdown from './shared/PayslipBreakdown';
@@ -33,7 +33,7 @@ const PayslipDetail: React.FC = () => {
   const handleDownload = async (url: string, fileName: string) => {
     await present({message: 'Downloading...'});
     try {
-      await FileSystem.downloadFile(url, fileName);
+      await FileTransferService.downloadFile(url, fileName);
       await showToast('File downloaded successfully!', Constants.COLORS.PRIMARY);
     } catch (error) {
       console.error('Download failed', error);

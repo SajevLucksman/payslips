@@ -1,18 +1,18 @@
-import FileSystem from './file-system';
+import FileSystemService from './FileSystemService';
 import Log from './log';
 
-class FileTransfer {
+class FileTransferService {
   async downloadFile(url: string, fileName: string): Promise<string> {
     try {
       const blob = await this.fetchBlob(url);
       const fileExtension = this.getFileExtension(url);
       const fullFileName = `${fileName}.${fileExtension}`;
       const base64data = await this.convertBlobToBase64(blob);
-      const fileUri = await FileSystem.writeFile(fullFileName, base64data.split(',')[1]);
-      Log.log('File saved at:'+ fileUri);
+      const fileUri = await FileSystemService.writeFile(fullFileName, base64data.split(',')[1]);
+      Log.log('File saved at:' + fileUri);
       return fileUri;
     } catch (error) {
-      Log.log('Error downloading the file'+ error);
+      Log.log('Error downloading the file' + error);
       throw error;
     }
   }
@@ -36,4 +36,4 @@ class FileTransfer {
   }
 }
 
-export default new FileTransfer();
+export default new FileTransferService();
