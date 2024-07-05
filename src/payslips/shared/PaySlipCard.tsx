@@ -19,6 +19,7 @@ const PayslipCard: React.FC<PayslipCardProps> = ({payslip}) => {
       <IonCardHeader>
         <IonCardTitle>{t('PAYSLIP.PAYSLIP_DETAIL_CARD_TITLE', {name: employee.name})}</IonCardTitle>
         <IonCardSubtitle>{t('PAYSLIP.PAYSLIP_SUMMARY_CARD_SUB_HEADING')}</IonCardSubtitle>
+        <IonCardSubtitle>{t('PAYSLIP.PAYSLIP_BREAKDOWN_PERIOD', {fromDate: payslip.fromDate, toDate: payslip.toDate})}</IonCardSubtitle>
       </IonCardHeader>
       <IonCardContent>
         <IonCardSubtitle>{t('PAYSLIP.EMPLOYER_ID', {employerID: employee.employerID})}</IonCardSubtitle>
