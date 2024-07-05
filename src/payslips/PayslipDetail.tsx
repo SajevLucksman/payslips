@@ -13,10 +13,11 @@ import {
   IonTitle,
 } from '@ionic/react';
 import { useParams } from 'react-router';
-import { getPayslip, Payslip } from '../common/data/payslips';
+import { getPayslip } from '../common/data/payslips';
+import { Payslip } from '../common/interfaces/Payslip';
 import FileTransferService from '../common/services/FileTransferService';
 import Constants from '../common/constants/Constant';
-import PayslipCard from './shared/PaySlipsCard';
+import PayslipCard from './shared/PaySlipCard';
 import PayslipBreakdown from './shared/PayslipBreakdown';
 import LogService from '../common/services/LogService';
 

@@ -6,13 +6,9 @@ import {
   IonCardSubtitle,
   IonCardContent,
 } from '@ionic/react';
-import { Payslip } from '../../common/data/payslips';
+import { PayslipCardProps } from '../../common/interfaces/PayslipCardProps';
 
-interface Props {
-  payslip: Payslip;
-}
-
-const PayslipCard: React.FC<Props> = ({payslip}) => (
+const PayslipCard: React.FC<PayslipCardProps> = ({payslip}) => (
   <IonCard color="primary">
     <IonCardHeader>
       <IonCardTitle>Name: L SAJEV</IonCardTitle>

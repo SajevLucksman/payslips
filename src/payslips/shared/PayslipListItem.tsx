@@ -5,12 +5,9 @@ import {
   IonText,
   IonChip,
 } from '@ionic/react';
-import { Payslip } from '../../common/data/payslips';
 import './PayslipListItem.css';
+import { PayslipListItemProps } from '../../common/interfaces/PayslipListItemProps';
 
-interface PayslipListItemProps {
-  payslip: Payslip;
-}
 
 const PayslipListItem: React.FC<PayslipListItemProps> = ({payslip}) => {
 
